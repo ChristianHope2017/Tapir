@@ -16,11 +16,20 @@
 <h2>{{.HeaderText}}</h2>
 {{if .Feedback}}
     <h3>Feedback Entries:</h3>
-    <ul>
-        {{range .Feedback}}
-            <li>{{.}}</li>
-        {{end}}
-    </ul>
+    <table class="my-table">
+        <thead>
+            <tr>
+                <th>Feedbacks</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{range .Feedback}}
+                <tr>
+                    <td>{{.}}</td>
+                </tr>
+            {{end}}
+        </tbody>
+    </table>
 {{else}}
     <p>No feedback entries found.</p>
 {{end}}

@@ -8,28 +8,37 @@
 </head>
 <body>
 <nav class="navbar">
-        <div class="nav-buttons">
-            <button class="nav-btn"><a href="/">Home</a></button>
-        </div>
-    </nav>
-    <h1>{{.Title}}</h1>
+    <div class="nav-buttons">
+        <button class="nav-btn"><a href="/">Home</a></button>
+    </div>
+</nav>
+<h1>{{.Title}}</h1>
 <h2>{{.HeaderText}}</h2>
 {{if .Journal}}
     <h3>Journal Entries:</h3>
-    <ul>
-        {{range .Journal}}
-            <li>{{.}}</li>
-        {{end}}
-    </ul>
+    <table class="my-table">
+        <thead>
+            <tr>
+                <th>Journals</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{range.Journal}}
+                <tr>
+                    <td>{{.}}</td>
+                </tr>
+            {{end}}
+        </tbody>
+    </table>
 {{else}}
-    <p>No feedback entries found.</p>
+    <p>No journal entries found.</p>
 {{end}}
-    <main>
-        <div class="success-message">
-            <h2>Thank You!</h2>
-        </div>
-    </main>
-    <footer>
-    </footer>
+<main>
+    <div class="success-message">
+        <h2>Thank You!</h2>
+    </div>
+</main>
+<footer>
+</footer>
 </body>
 </html>
