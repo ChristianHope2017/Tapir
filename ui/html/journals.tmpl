@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{.Title}}</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+<nav class="navbar">
+        <div class="nav-buttons">
+            <button class="nav-btn"><a href="/">Home</a></button>
+        </div>
+    </nav>
+    <h1>{{.Title}}</h1>
+<h2>{{.HeaderText}}</h2>
+{{if .Journal}}
+    <h3>Journal Entries:</h3>
+    <ul>
+        {{range .Journal}}
+            <li>{{.}}</li>
+        {{end}}
+    </ul>
+{{else}}
+    <p>No feedback entries found.</p>
+{{end}}
+    <main>
+        <div class="success-message">
+            <h2>Thank You!</h2>
+        </div>
+    </main>
+    <footer>
+    </footer>
+</body>
+</html>
